@@ -44,7 +44,7 @@ function App() {
             </div>
             {/* Tab Content */}
             <div className="tab-content flex-grow overflow-auto">
-              {tab === "map" ? <ListView /> : <MapView />}
+              {tab === "map" ? <MapView /> : <ListView />}
             </div>
           </div>
         </div>
