@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./App.css";
+import MapView from "./components/MapView";
+import ListView from "./components/ListView";
 
 function App() {
+  const [tab, setTab] = useState("map");
   return (
     <>
       <div className="app overflow-hidden flex flex-col">
@@ -15,6 +18,35 @@ function App() {
         </div>
         <div className="flex-grow flex flex-col">
           <div className="text-center text-4xl">hello world</div>
+          <div>
+            {/* Tab Navigation */}
+            <div className="tab-navigation flex justify-center border-t border-b">
+              <button
+                className={`flex-grow py-3 ${
+                  tab === "map"
+                    ? "border-b-4 border-blue-500 font-semibold"
+                    : "text-gray-500"
+                }`}
+                onClick={() => setTab("map")}
+              >
+                Map View
+              </button>
+              <button
+                className={`flex-grow py-3 ${
+                  tab === "list"
+                    ? "border-b-4 border-blue-500 font-semibold"
+                    : "text-gray-500"
+                }`}
+                onClick={() => setTab("list")}
+              >
+                List View
+              </button>
+            </div>
+            {/* Tab Content */}
+            <div className="tab-content flex-grow overflow-auto">
+              {tab === "map" ? <ListView /> : <MapView />}
+            </div>
+          </div>
         </div>
       </div>
     </>
