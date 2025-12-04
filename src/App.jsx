@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import MapView from "./components/MapView";
 import ListView from "./components/ListView";
+import FilterDropdown from "./components/FilterDropDown";
+
 
 function App() {
   const [tab, setTab] = useState("map");
@@ -18,6 +20,7 @@ function App() {
         </div>
         <div className="flex-grow flex flex-col">
           <div className="text-center text-4xl">hello world</div>
+          <FilterDropdown />
           <div>
             {/* Tab Navigation */}
             <div className="tab-navigation flex justify-center border-t border-b">
