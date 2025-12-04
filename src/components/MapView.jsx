@@ -1,4 +1,6 @@
 import { useState } from "react";
+import mapImage from "../assets/mcmaster-map.png";
+import heatMapIcon from "../assets/heatmap-dot.png";
 
 export default function MapView() {
   const [heatMapOn, setHeatMapOn] = useState(true);
@@ -30,29 +32,45 @@ export default function MapView() {
       </div>
 
       {/* Map Area */}
-      <div className="bg-gray-400 rounded-md mt-3 min-h-[350px] flex-1 relative ">
+      <div className="relative mt-3 min-h-[350px] flex-1 rounded-md">
 
-        {/* Crime zones */}
-        <div className="absolute top-14 left-10 w-16 h-16 bg-orange-300 rounded-full flex items-center justify-center opacity-80">
-          <div className="w-4 h-4 bg-black rounded-full" />
-        </div>
+        {/* Static Map */}
+        <img
+          src={mapImage}
+          alt="Map"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-        <div className="absolute top-20 right-10 w-20 h-20 bg-red-400 rounded-full flex items-center justify-center opacity-80">
-          <div className="w-5 h-5 bg-black rounded-full" />
-        </div>
+        {/* Heatmap Dots */}
+        <img
+          src={heatMapIcon}
+          alt="High risk zone"
+          className="absolute top-20 right-14 w-14 h-14 opacity-80"
+        />
 
-        <div className="absolute bottom-14 left-24 w-20 h-20 bg-red-500 rounded-full flex items-center justify-center opacity-80">
-          <div className="w-5 h-5 bg-black rounded-full" />
-        </div>
+        <img
+          src={heatMapIcon} 
+          alt="Medium risk zone"
+          className="absolute top-14 left-10 w-10 h-10 opacity-80"
+        />
+
+        <img
+          src={heatMapIcon}
+          alt="Very high risk zone"
+          className="absolute bottom-14 left-24 w-20 h-20 opacity-80"
+        />
 
         {/* User Location */}
-        <div className="absolute top-1/2 left-1/2 w-6 h-6 border-2 border-white rounded-full bg-transparent" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                        w-6 h-6 border-2 border-white rounded-full bg-transparent z-20" />
 
         {/* Tooltip */}
-        <div className="absolute top-16 right-4 bg-gray-100 text-black text-xs px-2 py-1 rounded shadow">
+        <div className="absolute top-16 right-4 bg-white text-black text-xs px-3 py-1 rounded-md shadow z-20">
           Recent Mugging +3
         </div>
+
       </div>
+
 
     </div>
   );
