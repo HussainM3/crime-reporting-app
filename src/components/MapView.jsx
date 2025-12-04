@@ -4,7 +4,7 @@ export default function MapView() {
   const [heatMapOn, setHeatMapOn] = useState(true);
 
   return (
-    <div className="flex flex-col h-full px-4">
+    <div className="flex flex-col flex-grow px-4">
 
       {/* Filters */}
       <div className="mt-4 flex flex-col gap-3">
@@ -30,7 +30,7 @@ export default function MapView() {
       </div>
 
       {/* Map Area */}
-      <div className="bg-gray-400 rounded-md mt-3 flex-1 relative overflow-hidden">
+      <div className="bg-gray-400 rounded-md mt-3 min-h-[350px] flex-1 relative ">
 
         {/* Crime zones */}
         <div className="absolute top-14 left-10 w-16 h-16 bg-orange-300 rounded-full flex items-center justify-center opacity-80">
@@ -54,10 +54,6 @@ export default function MapView() {
         </div>
       </div>
 
-      {/* Report Button */}
-      <button className="bg-gray-200 my-4 p-4 text-2xl font-semibold rounded-md hover:bg-gray-300 duration-200">
-        REPORT
-      </button>
     </div>
   );
 }
