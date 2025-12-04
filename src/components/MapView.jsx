@@ -41,28 +41,41 @@ export default function MapView() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {/* Heatmap Dots */}
-        <img
-          src={heatMapIcon}
-          alt="High risk zone"
-          className="absolute top-20 right-14 w-14 h-14 opacity-80"
-        />
+        {/* Crime Indicators */}
+        {heatMapOn ? (
+          <>
+            {/* Heatmap Mode */}
+            <img
+              src={heatMapIcon}
+              alt="High risk zone"
+              className="absolute top-20 right-14 w-14 h-14 opacity-80"
+            />
 
-        <img
-          src={heatMapIcon} 
-          alt="Medium risk zone"
-          className="absolute top-14 left-10 w-10 h-10 opacity-80"
-        />
+            <img
+              src={heatMapIcon}
+              alt="Medium risk zone"
+              className="absolute top-14 left-10 w-10 h-10 opacity-80"
+            />
 
-        <img
-          src={heatMapIcon}
-          alt="Very high risk zone"
-          className="absolute bottom-14 left-24 w-20 h-20 opacity-80"
-        />
+            <img
+              src={heatMapIcon}
+              alt="Very high risk zone"
+              className="absolute bottom-14 left-24 w-20 h-20 opacity-80"
+            />
+          </>
+        ) : (
+          <>
+            {/* Simple Dot Mode */}
+            <SimpleDot className="top-24 right-20" />
+            <SimpleDot className="top-16 left-14" />
+            <SimpleDot className="bottom-20 left-32" />
+          </>
+        )}
+
 
         {/* User Location */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-6 h-6 border-2 border-white rounded-full bg-transparent z-20" />
+                        w-3 h-3 border-2 border-white rounded-full bg-blue-400 z-20" />
 
         {/* Tooltip */}
         <div className="absolute top-16 right-4 bg-white text-black text-xs px-3 py-1 rounded-md shadow z-20">
@@ -73,6 +86,14 @@ export default function MapView() {
 
 
     </div>
+  );
+}
+
+function SimpleDot({ className }) {
+  return (
+    <div
+      className={`absolute w-3 h-3 bg-red-600 rounded-full z-10 ${className}`}
+    />
   );
 }
 
