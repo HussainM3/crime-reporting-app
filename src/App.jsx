@@ -33,6 +33,11 @@ function App() {
     ],
   });
 
+  const changeTab = (newTab) => {
+    setShowReport(null);
+    setTab(newTab);
+  };
+
   return (
     <>
       <div className="app overflow-hidden flex flex-col">
@@ -55,7 +60,7 @@ function App() {
                     ? "border-b-4 border-blue-500 font-semibold"
                     : "text-gray-500"
                 }`}
-                onClick={() => setTab("map")}
+                onClick={() => changeTab("map")}
               >
                 Map View
               </button>
@@ -65,7 +70,7 @@ function App() {
                     ? "border-b-4 border-blue-500 font-semibold"
                     : "text-gray-500"
                 }`}
-                onClick={() => setTab("list")}
+                onClick={() => changeTab("list")}
               >
                 List View
               </button>
