@@ -6,7 +6,7 @@ import ShowReport from "./components/ShowReport";
 
 function App() {
   const [tab, setTab] = useState("map");
-  const [showReport, setShowReport] = useState({
+  const exampleReport = {
     id: 1,
     type: "Theft",
     description: "Stolen bicycle near the park.",
@@ -31,7 +31,8 @@ function App() {
         timestamp: "2024-06-01T10:10:00Z",
       },
     ],
-  });
+  };
+  const [showReport, setShowReport] = useState(exampleReport);
 
   const changeTab = (newTab) => {
     setShowReport(null);
@@ -77,7 +78,12 @@ function App() {
             </div>
             {/* Tab Content */}
             <div className="tab-content flex-grow overflow-auto relative">
-              {tab === "map" ? <MapView /> : <ListView />}
+              {!showReport &&
+                (tab === "map" ? (
+                  <MapView onClick={() => setShowReport(exampleReport)} />
+                ) : (
+                  <ListView />
+                ))}
               {showReport && (
                 <ShowReport report={showReport} setShowReport={setShowReport} />
               )}
@@ -91,7 +97,6 @@ function App() {
             REPORT
           </button>
         </div>
-
       </div>
     </>
   );

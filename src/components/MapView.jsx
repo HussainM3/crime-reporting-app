@@ -2,12 +2,11 @@ import { useState } from "react";
 import mapImage from "../assets/mcmaster-map.png";
 import heatMapIcon from "../assets/heatmap-dot.png";
 
-export default function MapView() {
+export default function MapView({ onClick }) {
   const [heatMapOn, setHeatMapOn] = useState(true);
 
   return (
     <div className="flex flex-col flex-grow px-4">
-
       {/* Filters */}
       <div className="mt-4 flex flex-col gap-3">
         <FilterBox label="Filtering by: Violent Crime" />
@@ -32,8 +31,10 @@ export default function MapView() {
       </div>
 
       {/* Map Area */}
-      <div className="relative mt-3 min-h-[350px] flex-1 rounded-md">
-
+      <div
+        className="relative mt-3 min-h-[350px] flex-1 rounded-md"
+        onClick={onClick}
+      >
         {/* Static Map */}
         <img
           src={mapImage}
@@ -72,19 +73,17 @@ export default function MapView() {
           </>
         )}
 
-
         {/* User Location */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-3 h-3 border-2 border-white rounded-full bg-blue-400 z-20" />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                        w-3 h-3 border-2 border-white rounded-full bg-blue-400 z-20"
+        />
 
         {/* Tooltip */}
         <div className="absolute top-16 right-4 bg-white text-black text-xs px-3 py-1 rounded-md shadow z-20">
           Recent Mugging +3
         </div>
-
       </div>
-
-
     </div>
   );
 }
