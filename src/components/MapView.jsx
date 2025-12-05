@@ -8,11 +8,6 @@ export default function MapView() {
   return (
     <div className="flex flex-col flex-grow px-4">
 
-      {/* Filters */}
-      <div className="mt-4 flex flex-col gap-3">
-        <FilterBox label="Filtering by: Violent Crime" />
-      </div>
-
       {/* Heat Map Toggle */}
       <div className="flex justify-between items-center mt-6">
         <h2 className="text-lg font-bold">Heat Map View</h2>
