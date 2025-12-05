@@ -13,8 +13,12 @@ const ListView = () => {
 
   return (
     <div className="flex flex-col px-4 h-full bg-gray-50">
+      {/* Added FilterDropdown at the top with proper spacing */}
+      <div className="mb-6">
+        <FilterDropdown />
+      </div>
 
-      <div className="grid grid-cols-[1.5fr_1fr_1fr] px-4 mb-2 mt-6 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+      <div className="grid grid-cols-[1.5fr_1fr_1fr] px-4 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
         <div className="text-left self-end">Crime</div>
         <div className="text-center self-end">Distance</div>
         <div className="text-right self-end">Creditability</div>
@@ -44,9 +48,6 @@ const ListView = () => {
           </div>
         ))}
       </div>
-    <div>
-       <FilterDropdown />
-      <div className="p-4">List View Content</div>
     </div>
   );
 };
@@ -55,15 +56,6 @@ function getScoreColor(score) {
   if (score > 0) return "text-green-600";
   if (score < 0) return "text-red-500";
   return "text-gray-400";
-}
-
-function FilterBox({ label }) {
-  return (
-    <div className="bg-white border border-gray-300 px-4 py-3 rounded-lg flex justify-between items-center text-sm font-medium text-gray-700 shadow-sm">
-      {label}
-      <span className="text-gray-400 text-xs">▼</span>
-    </div>
-  );
 }
 
 export default ListView;
