@@ -1,12 +1,14 @@
 import { useState } from "react";
 import mapImage from "../assets/mcmaster-map.png";
 import heatMapIcon from "../assets/heatmap-dot.png";
+import FilterDropdown from "./FilterDropDown";
 
 export default function MapView({ onClick }) {
   const [heatMapOn, setHeatMapOn] = useState(true);
 
   return (
     <div className="flex flex-col flex-grow px-4">
+ <FilterDropdown />
       {/* Heat Map Toggle */}
       <div className="flex justify-between items-center mt-6">
         <h2 className="text-lg font-bold">Heat Map View</h2>

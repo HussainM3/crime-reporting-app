@@ -52,8 +52,6 @@ function App() {
           </div>
         </div>
         <div className="flex-grow flex flex-col">
-          <div className="text-center text-4xl">hello world</div>
-          <FilterDropdown />
           <div className="flex-grow flex flex-col border-t">
             {/* Tab Navigation */}
             <div className="tab-navigation flex justify-center border-t border-b">
