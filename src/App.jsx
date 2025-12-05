@@ -3,6 +3,7 @@ import "./App.css";
 import MapView from "./components/MapView";
 import ListView from "./components/ListView";
 import ShowReport from "./components/ShowReport";
+import FilterDropdown from "./components/FilterDropDown";
 
 function App() {
   const [tab, setTab] = useState("map");
@@ -52,6 +53,7 @@ function App() {
         </div>
         <div className="flex-grow flex flex-col">
           <div className="text-center text-4xl">hello world</div>
+          <FilterDropdown />
           <div className="flex-grow flex flex-col border-t">
             {/* Tab Navigation */}
             <div className="tab-navigation flex justify-center border-t border-b">
