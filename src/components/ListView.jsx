@@ -1,4 +1,5 @@
 import React from "react";
+import FilterDropdown from "./FilterDropDown";
 
 const ListView = () => {
   const reports = [
@@ -43,6 +44,9 @@ const ListView = () => {
           </div>
         ))}
       </div>
+    <div>
+       <FilterDropdown />
+      <div className="p-4">List View Content</div>
     </div>
   );
 };
