@@ -67,6 +67,32 @@ function FilterDropdown() {
         <div className="absolute top-full left-1/2 -translate-x-1/2 z-50 bg-gray-200 p-3 rounded-b shadow-md w-72 text-sm">
 
 
+<div className="mb-3">
+  <div className="flex items-center bg-white rounded-full px-3 py-1.5 shadow-sm">
+    
+    <input
+      type="text"
+      placeholder="Location"
+      className="flex-grow bg-transparent outline-none text-sm text-gray-700 placeholder-gray-400 leading-tight"
+    />
+
+  
+    <button
+      type="button"
+      disabled
+      className="
+        text-gray-500 
+        text-base 
+        cursor-pointer 
+        disabled:opacity-60 
+        disabled:hover:opacity-80
+      "
+    >
+      🔍
+    </button>
+
+  </div>
+</div>
        
           <div className="mb-2">
             <label className="flex items-center gap-2 cursor-pointer">
