@@ -12,9 +12,6 @@ const ListView = () => {
 
   return (
     <div className="flex flex-col px-4 h-full bg-gray-50">
-      <div className="mt-4 mb-6">
-        <FilterBox label="Filtering by: Violent Crime" />
-      </div>
 
       <div className="grid grid-cols-[1.5fr_1fr_1fr] px-4 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
         <div className="text-left self-end">Crime</div>
