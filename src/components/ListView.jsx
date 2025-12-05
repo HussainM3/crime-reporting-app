@@ -1,7 +1,7 @@
 import React from "react";
 import FilterDropdown from "./FilterDropDown";
 
-const ListView = () => {
+const ListView = ({ onClick }) => {
   const reports = [
     { type: "Mugging", distance: "350 m", score: 3 },
     { type: "Assault", distance: "400 m", score: 0 },
@@ -31,6 +31,7 @@ const ListView = () => {
             className={`grid grid-cols-[1.5fr_1fr_1fr] px-4 py-4 items-center transition-colors hover:bg-gray-50 ${
               index !== reports.length - 1 ? "border-b border-gray-100" : ""
             }`}
+            onClick={onClick}
           >
             <div className="text-left font-medium text-gray-800">
               {report.type}
@@ -59,3 +60,4 @@ function getScoreColor(score) {
 }
 
 export default ListView;
+

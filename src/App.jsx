@@ -82,7 +82,7 @@ function App() {
                 (tab === "map" ? (
                   <MapView onClick={() => setShowReport(exampleReport)} />
                 ) : (
-                  <ListView />
+                  <ListView onClick={() => setShowReport(exampleReport)} />
                 ))}
               {showReport && (
                 <ShowReport report={showReport} setShowReport={setShowReport} />
