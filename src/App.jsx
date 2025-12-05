@@ -33,7 +33,7 @@ function App() {
       },
     ],
   };
-  const [showReport, setShowReport] = useState(exampleReport);
+  const [showReport, setShowReport] = useState(null);
 
   const changeTab = (newTab) => {
     setShowReport(null);
