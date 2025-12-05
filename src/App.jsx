@@ -93,7 +93,7 @@ function App() {
 
         {/* Report Button */}
         <div className="sticky bottom-0 bg-white p-4">
-          <button className="w-full bg-gray-200 p-4 text-2xl font-semibold rounded-md hover:bg-gray-300 duration-200">
+          <button className="w-full bg-red-300 p-4 text-2xl font-semibold rounded-md hover:bg-red-500 duration-200">
             REPORT
           </button>
         </div>
